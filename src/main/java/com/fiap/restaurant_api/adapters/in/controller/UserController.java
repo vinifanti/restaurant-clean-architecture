@@ -1,4 +1,4 @@
-package com.fiap.restaurant_api.adapters.controller;
+package com.fiap.restaurant_api.adapters.in.controller;
 
 import com.fiap.restaurant_api.application.user.dto.ChangePasswordDto;
 import com.fiap.restaurant_api.application.user.dto.CreateUserDto;

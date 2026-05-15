@@ -1,4 +1,4 @@
-package com.fiap.restaurant_api.adapters.persistence.user.entity;
+package com.fiap.restaurant_api.adapters.out.persistence.user.entity;
 
 import jakarta.persistence.*;
 

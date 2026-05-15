@@ -1,6 +1,6 @@
-package com.fiap.restaurant_api.adapters.persistence.user.repository;
+package com.fiap.restaurant_api.adapters.out.persistence.user.repository;
 
-import com.fiap.restaurant_api.adapters.persistence.user.entity.UserJpaEntity;
+import com.fiap.restaurant_api.adapters.out.persistence.user.entity.UserJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,8 +1,8 @@
-package com.fiap.restaurant_api.adapters.persistence.user;
+package com.fiap.restaurant_api.adapters.out.persistence.user;
 
-import com.fiap.restaurant_api.adapters.persistence.user.entity.UserJpaEntity;
-import com.fiap.restaurant_api.adapters.persistence.user.mapper.UserPersistenceMapper;
-import com.fiap.restaurant_api.adapters.persistence.user.repository.UserJpaRepository;
+import com.fiap.restaurant_api.adapters.out.persistence.user.entity.UserJpaEntity;
+import com.fiap.restaurant_api.adapters.out.persistence.user.mapper.UserPersistenceMapper;
+import com.fiap.restaurant_api.adapters.out.persistence.user.repository.UserJpaRepository;
 import com.fiap.restaurant_api.domain.model.User;
 import com.fiap.restaurant_api.domain.port.output.UserRepositoryPort;
 import org.springframework.stereotype.Component;

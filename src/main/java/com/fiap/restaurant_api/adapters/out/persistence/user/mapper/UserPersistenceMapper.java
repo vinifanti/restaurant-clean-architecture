@@ -1,6 +1,6 @@
-package com.fiap.restaurant_api.adapters.persistence.user.mapper;
+package com.fiap.restaurant_api.adapters.out.persistence.user.mapper;
 
-import com.fiap.restaurant_api.adapters.persistence.user.entity.UserJpaEntity;
+import com.fiap.restaurant_api.adapters.out.persistence.user.entity.UserJpaEntity;
 import com.fiap.restaurant_api.domain.model.User;
 import com.fiap.restaurant_api.domain.model.UserType;
 
