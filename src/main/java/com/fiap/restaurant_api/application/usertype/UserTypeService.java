@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Transactional
@@ -31,7 +30,7 @@ public class UserTypeService implements UserTypeUseCase {
         validateName(dto.name());
 
         UserType userType = new UserType(
-                UUID.randomUUID(),
+                null,
                 dto.name(),
                 dto.description(),
                 LocalDateTime.now()
@@ -44,7 +43,7 @@ public class UserTypeService implements UserTypeUseCase {
     }
 
     @Override
-    public UserTypeResponseDto findById(UUID id) {
+    public UserTypeResponseDto findById(Long id) {
 
         UserType userType = repository.findById(id)
                 .orElseThrow(() ->
@@ -66,7 +65,7 @@ public class UserTypeService implements UserTypeUseCase {
 
     @Override
     public UserTypeResponseDto update(
-            UUID id,
+            Long id,
             UpdateUserTypeDto dto
     ) {
 
@@ -87,7 +86,7 @@ public class UserTypeService implements UserTypeUseCase {
     }
 
     @Override
-    public void delete(UUID id) {
+    public void delete(Long id) {
 
         UserType userType = repository.findById(id)
                 .orElseThrow(() ->

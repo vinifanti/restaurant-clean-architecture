@@ -6,27 +6,26 @@ import com.fiap.restaurant_api.application.user.dto.UpdateUserDto;
 import com.fiap.restaurant_api.application.user.dto.UserResponseDto;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface UserUseCase {
 
     UserResponseDto create(CreateUserDto dto);
 
-    UserResponseDto findById(UUID id);
+    UserResponseDto findById(Long id);
 
     List<UserResponseDto> findByName(String name);
 
     List<UserResponseDto> findAll();
 
     UserResponseDto update(
-            UUID id,
+            Long id,
             UpdateUserDto dto
     );
 
     void changePassword(
-            UUID id,
+            Long id,
             ChangePasswordDto dto
     );
 
-    void delete(UUID id);
+    void delete(Long id);
 }

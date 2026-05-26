@@ -1,12 +1,11 @@
 package com.fiap.restaurant_api.domain.model;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 import com.fiap.restaurant_api.domain.exception.ValidationException;
 
 public class User {
 
-    private UUID id;
+    private Long id;
     private String name;
     private String email;
     private String login;
@@ -15,7 +14,7 @@ public class User {
     private LocalDateTime lastUpdate;
 
     public User(
-            UUID id,
+            Long id,
             String name,
             String email,
             String login,
@@ -126,7 +125,7 @@ public class User {
         }
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 

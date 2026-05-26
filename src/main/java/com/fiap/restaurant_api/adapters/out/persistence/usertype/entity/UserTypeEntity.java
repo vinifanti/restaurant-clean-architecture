@@ -3,14 +3,14 @@ package com.fiap.restaurant_api.adapters.out.persistence.usertype.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "user_types")
 public class UserTypeEntity {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -24,7 +24,7 @@ public class UserTypeEntity {
     }
 
     public UserTypeEntity(
-            UUID id,
+            Long id,
             String name,
             String description,
             LocalDateTime lastUpdate
@@ -35,11 +35,11 @@ public class UserTypeEntity {
         this.lastUpdate = lastUpdate;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -67,3 +67,4 @@ public class UserTypeEntity {
         this.lastUpdate = lastUpdate;
     }
 }
+

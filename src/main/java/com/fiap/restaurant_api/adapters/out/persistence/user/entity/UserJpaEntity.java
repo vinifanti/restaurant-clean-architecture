@@ -3,14 +3,14 @@ package com.fiap.restaurant_api.adapters.out.persistence.user.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Entity
 @Table(name = "users")
 public class UserJpaEntity {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
 
@@ -22,18 +22,19 @@ public class UserJpaEntity {
 
     private String password;
 
-    private UUID userTypeId;
+    @Column(name = "user_type_id")
+    private Long userTypeId;
 
     private LocalDateTime lastUpdate;
 
     public UserJpaEntity() {
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,11 +70,11 @@ public class UserJpaEntity {
         this.password = password;
     }
 
-    public UUID getUserTypeId() {
+    public Long getUserTypeId() {
         return userTypeId;
     }
 
-    public void setUserTypeId(UUID userTypeId) {
+    public void setUserTypeId(Long userTypeId) {
         this.userTypeId = userTypeId;
     }
 
@@ -85,3 +86,4 @@ public class UserJpaEntity {
         this.lastUpdate = lastUpdate;
     }
 }
+

@@ -1,17 +1,16 @@
 package com.fiap.restaurant_api.domain.model;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class UserType {
 
-    private UUID id;
+    private Long id;
     private String name;
     private String description;
     private LocalDateTime lastUpdate;
 
     public UserType(
-            UUID id,
+            Long id,
             String name,
             String description,
             LocalDateTime lastUpdate
@@ -40,7 +39,7 @@ public class UserType {
         this.lastUpdate = LocalDateTime.now();
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 

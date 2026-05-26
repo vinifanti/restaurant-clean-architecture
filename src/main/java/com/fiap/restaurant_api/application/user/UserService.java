@@ -45,7 +45,7 @@ public class UserService implements UserUseCase {
         UserType userType = findUserType(dto.userTypeId());
 
         User user = new User(
-                UUID.randomUUID(),
+                null,
                 dto.name(),
                 dto.email(),
                 dto.login(),
@@ -60,7 +60,7 @@ public class UserService implements UserUseCase {
     }
 
     @Override
-    public UserResponseDto findById(UUID id) {
+    public UserResponseDto findById(Long id) {
 
         User user = userRepositoryPort.findById(id)
                 .orElseThrow(() ->
@@ -91,7 +91,7 @@ public class UserService implements UserUseCase {
 
     @Override
     public UserResponseDto update(
-            UUID id,
+            Long id,
             UpdateUserDto dto
     ) {
 
@@ -120,7 +120,7 @@ public class UserService implements UserUseCase {
 
     @Override
     public void changePassword(
-            UUID id,
+            Long id,
             ChangePasswordDto dto
     ) {
 
@@ -152,7 +152,7 @@ public class UserService implements UserUseCase {
     }
 
     @Override
-    public void delete(UUID id) {
+    public void delete(Long id) {
 
         User user = userRepositoryPort.findById(id)
                 .orElseThrow(() ->
@@ -177,7 +177,7 @@ public class UserService implements UserUseCase {
     }
 
     private void validateUpdateEmail(
-            UUID userId,
+            Long userId,
             String email
     ) {
 
@@ -195,7 +195,7 @@ public class UserService implements UserUseCase {
                 });
     }
 
-    private UserType findUserType(UUID userTypeId) {
+    private UserType findUserType(Long userTypeId) {
 
         return userTypeRepositoryPort.findById(userTypeId)
                 .orElseThrow(() ->

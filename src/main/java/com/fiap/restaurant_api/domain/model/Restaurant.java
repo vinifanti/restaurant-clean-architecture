@@ -1,11 +1,10 @@
 package com.fiap.restaurant_api.domain.model;
 
 import java.time.LocalTime;
-import java.util.UUID;
 
 public class Restaurant {
 
-    private UUID id;
+    private Long id;
     private String name;
     private String address;
     private String cuisineType;
@@ -14,7 +13,7 @@ public class Restaurant {
     private User owner;
 
     public Restaurant(
-            UUID id,
+            Long id,
             String name,
             String address,
             String cuisineType,
@@ -81,7 +80,7 @@ public class Restaurant {
         }
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 

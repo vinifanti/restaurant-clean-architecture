@@ -5,20 +5,19 @@ import com.fiap.restaurant_api.application.usertype.dto.UpdateUserTypeDto;
 import com.fiap.restaurant_api.application.usertype.dto.UserTypeResponseDto;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface UserTypeUseCase {
 
     UserTypeResponseDto create(CreateUserTypeDto dto);
 
-    UserTypeResponseDto findById(UUID id);
+    UserTypeResponseDto findById(Long id);
 
     List<UserTypeResponseDto> findAll();
 
     UserTypeResponseDto update(
-            UUID id,
+            Long id,
             UpdateUserTypeDto dto
     );
 
-    void delete(UUID id);
+    void delete(Long id);
 }

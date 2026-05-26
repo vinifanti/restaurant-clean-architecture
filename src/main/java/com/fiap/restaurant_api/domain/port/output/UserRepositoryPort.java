@@ -4,13 +4,12 @@ import com.fiap.restaurant_api.domain.model.User;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public interface UserRepositoryPort {
 
     User save(User user);
 
-    Optional<User> findById(UUID id);
+    Optional<User> findById(Long id);
 
     Optional<User> findByEmail(String email);
 

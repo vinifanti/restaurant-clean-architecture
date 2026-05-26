@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Component
 public class UserTypePersistenceAdapter
@@ -36,7 +35,7 @@ public class UserTypePersistenceAdapter
     }
 
     @Override
-    public Optional<UserType> findById(UUID id) {
+    public Optional<UserType> findById(Long id) {
 
         return repository.findById(id)
                 .map(UserTypeEntityMapper::toDomain);
@@ -66,3 +65,4 @@ public class UserTypePersistenceAdapter
         );
     }
 }
+

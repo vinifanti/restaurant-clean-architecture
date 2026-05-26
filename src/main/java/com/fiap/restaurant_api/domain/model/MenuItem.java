@@ -1,11 +1,10 @@
 package com.fiap.restaurant_api.domain.model;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 public class MenuItem {
 
-    private UUID id;
+    private Long id;
     private String name;
     private String description;
     private BigDecimal price;
@@ -14,7 +13,7 @@ public class MenuItem {
     private Restaurant restaurant;
 
     public MenuItem(
-            UUID id,
+            Long id,
             String name,
             String description,
             BigDecimal price,
@@ -71,7 +70,7 @@ public class MenuItem {
         }
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 

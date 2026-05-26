@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
@@ -34,7 +33,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserResponseDto findById(
-            @PathVariable UUID id
+            @PathVariable Long id
     ) {
 
         return userUseCase.findById(id);
@@ -56,7 +55,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public UserResponseDto update(
-            @PathVariable UUID id,
+            @PathVariable Long id,
             @RequestBody UpdateUserDto dto
     ) {
 
@@ -66,7 +65,7 @@ public class UserController {
     @PatchMapping("/{id}/password")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void changePassword(
-            @PathVariable UUID id,
+            @PathVariable Long id,
             @RequestBody ChangePasswordDto dto
     ) {
 
@@ -76,7 +75,7 @@ public class UserController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(
-            @PathVariable UUID id
+            @PathVariable Long id
     ) {
 
         userUseCase.delete(id);

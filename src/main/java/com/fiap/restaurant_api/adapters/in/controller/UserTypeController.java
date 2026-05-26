@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/user-types")
@@ -33,7 +32,7 @@ public class UserTypeController {
 
     @GetMapping("/{id}")
     public UserTypeResponseDto findById(
-            @PathVariable UUID id
+            @PathVariable Long id
     ) {
 
         return useCase.findById(id);
@@ -47,7 +46,7 @@ public class UserTypeController {
 
     @PutMapping("/{id}")
     public UserTypeResponseDto update(
-            @PathVariable UUID id,
+            @PathVariable Long id,
             @RequestBody UpdateUserTypeDto dto
     ) {
 
@@ -57,9 +56,10 @@ public class UserTypeController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(
-            @PathVariable UUID id
+            @PathVariable Long id
     ) {
 
         useCase.delete(id);
     }
 }
+
