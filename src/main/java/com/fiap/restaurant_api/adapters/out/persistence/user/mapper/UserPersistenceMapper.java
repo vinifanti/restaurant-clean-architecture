@@ -49,4 +49,20 @@ public class UserPersistenceMapper {
                 entity.getLastUpdate()
         );
     }
+
+    public static User toDomain(
+            UserJpaEntity entity,
+            UserType userType
+    ) {
+
+        return new User(
+                entity.getId(),
+                entity.getName(),
+                entity.getEmail(),
+                entity.getLogin(),
+                entity.getPassword(),
+                userType,
+                entity.getLastUpdate()
+        );
+    }
 }

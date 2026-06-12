@@ -80,6 +80,23 @@ public class Restaurant {
         }
     }
 
+    public void update(
+            String name,
+            String address,
+            String cuisineType,
+            LocalTime openingHour,
+            LocalTime closingHour
+    ) {
+
+        validate(name, address, cuisineType, openingHour, closingHour, this.owner);
+
+        this.name = name;
+        this.address = address;
+        this.cuisineType = cuisineType;
+        this.openingHour = openingHour;
+        this.closingHour = closingHour;
+    }
+
     public Long getId() {
         return id;
     }
