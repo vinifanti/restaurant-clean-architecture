@@ -70,6 +70,23 @@ public class MenuItem {
         }
     }
 
+    public void update(
+            String name,
+            String description,
+            BigDecimal price,
+            boolean dineInOnly,
+            String imagePath
+    ) {
+
+        validate(name, description, price, this.restaurant);
+
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.dineInOnly = dineInOnly;
+        this.imagePath = imagePath;
+    }
+
     public Long getId() {
         return id;
     }
