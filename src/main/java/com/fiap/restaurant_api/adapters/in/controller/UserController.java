@@ -5,6 +5,7 @@ import com.fiap.restaurant_api.application.user.dto.CreateUserDto;
 import com.fiap.restaurant_api.application.user.dto.UpdateUserDto;
 import com.fiap.restaurant_api.application.user.dto.UserResponseDto;
 import com.fiap.restaurant_api.domain.port.input.UserUseCase;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class UserController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponseDto create(
-            @RequestBody CreateUserDto dto
+            @RequestBody @Valid CreateUserDto dto
     ) {
 
         return userUseCase.create(dto);
@@ -56,7 +57,7 @@ public class UserController {
     @PutMapping("/{id}")
     public UserResponseDto update(
             @PathVariable Long id,
-            @RequestBody UpdateUserDto dto
+            @RequestBody @Valid UpdateUserDto dto
     ) {
 
         return userUseCase.update(id, dto);
@@ -66,7 +67,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void changePassword(
             @PathVariable Long id,
-            @RequestBody ChangePasswordDto dto
+            @RequestBody @Valid ChangePasswordDto dto
     ) {
 
         userUseCase.changePassword(id, dto);

@@ -29,28 +29,6 @@ public class UserPersistenceMapper {
     }
 
     public static User toDomain(
-            UserJpaEntity entity
-    ) {
-
-        UserType userType = new UserType(
-                entity.getUserTypeId(),
-                null,
-                null,
-                null
-        );
-
-        return new User(
-                entity.getId(),
-                entity.getName(),
-                entity.getEmail(),
-                entity.getLogin(),
-                entity.getPassword(),
-                userType,
-                entity.getLastUpdate()
-        );
-    }
-
-    public static User toDomain(
             UserJpaEntity entity,
             UserType userType
     ) {
